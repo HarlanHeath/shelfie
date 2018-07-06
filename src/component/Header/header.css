@@ -1,0 +1,12 @@
+.header-bar {
+  width: 100% vw;
+  height: 75px;
+  background-color: #ab2a19;
+}
+.logo {
+  font-family: "Open Sans", sans-serif;
+  color: white;
+  float: left;
+  margin-top: 25px;
+  margin-left: 200px;
+}

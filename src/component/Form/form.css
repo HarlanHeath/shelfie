@@ -1,0 +1,27 @@
+.form-field {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  justify-content: space-between;
+  align-items: center;
+  align-content: center;
+  background-color: #3ad886;
+  height: 400px;
+  width: 400px;
+}
+
+.button-contain {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: space-around;
+  align-items: center;
+  align-content: stretch;
+}
+
+.form-button {
+  margin: 10px;
+  font-family: "Open Sans", sans-serif;
+  font-size: 15px;
+  background-color: #ed6b5a;
+}

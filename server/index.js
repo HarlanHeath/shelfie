@@ -1,8 +1,8 @@
 const express = require("express");
 const bodyParser = require("body-parser");
-const axios = require("axios");
 const massive = require("massive");
 require(`dotenv`).config();
+const controller = require("./controller");
 
 const restCtrl = require("./controller");
 
@@ -14,6 +14,8 @@ app.use(bodyParser.json());
 massive(process.env.CONNECTION_STRING).then(dbInstance => {
   app.set("db", dbInstance);
 });
+
+app.get(`/api/inventory`, controller.showAll);
 
 app.listen(port, () => {
   console.log(`I am listening on port ${port}`);
