@@ -4,8 +4,6 @@ const massive = require("massive");
 require(`dotenv`).config();
 const controller = require("./controller");
 
-const restCtrl = require("./controller");
-
 const port = 3001;
 const app = express();
 
