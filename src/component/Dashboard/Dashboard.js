@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-import Product from "../Product/Product";
 import axios from "axios";
 
 export default class Dashboard extends Component {
@@ -10,26 +9,22 @@ export default class Dashboard extends Component {
     };
   }
 
-  // componentDidMount() {
-  //   axios.get("/api/products").then(res => {
-  //     this.setState({
-  //       products: res.data
-  //     });
-  //   });
-  // }
+  deleteprod(e) {
+    axios.delete(`/api/delete/${e}`);
+  }
 
   render() {
-    // console.log(this.props.inventory);
-    let prodinv = this.props.inventory.map((product, id) => {
-      // console.log(product);
+    let prodinv = this.props.inventory.map((product, prod_id) => {
       return (
-        <div className="prod-contain" key={id}>
+        <div className="prod-contain" key={prod_id}>
           <p>{product.imageurl}</p>
           <p>{product.name}</p>
-          <p>{product.price}</p> )
+          <p>{product.price}</p>
+          <button onClick={e => this.deleteprod(e.prod_id)}>
+            Delete Product
+          </button>
         </div>
       );
-      return <Product />;
     });
 
     return (

@@ -1,0 +1,1 @@
+DELETE FROM sim1prod WHERE id=$1

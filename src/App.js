@@ -1,4 +1,5 @@
 import React, { Component } from "react";
+import axios from "axios";
 import "./App.css";
 import Dashboard from "./component/Dashboard/Dashboard";
 import Form from "./component/Form/Form";
@@ -8,24 +9,17 @@ class App extends Component {
   constructor() {
     super();
     this.state = {
-      inventory: [
-        {
-          name: "dog",
-          price: 10,
-          imageurl: "www.pic.com"
-        },
-        {
-          name: "dog",
-          price: 10,
-          imageurl: "www.pic.com"
-        },
-        {
-          name: "dog",
-          price: 10,
-          imageurl: "www.pic.com"
-        }
-      ]
+      inventory: []
     };
+  }
+
+  componentDidMount() {
+    axios.get("/api/inventory").then(res => {
+      console.log("HAHAHAHAHHAHA", res);
+      this.setState({
+        inventory: res.data
+      });
+    });
   }
 
   render() {
