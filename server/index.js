@@ -18,7 +18,7 @@ massive(process.env.CONNECTION_STRING).then(dbInstance => {
 });
 
 app.get(`/api/inventory`, controller.showAll);
-app.delete(`/api/delete/:id`, controller.delete);
+app.delete(`/api/delete/:prod_id`, controller.delete);
 
 // Build the APP for production catch all errors during build
 // app.get("*", (req, res) => {

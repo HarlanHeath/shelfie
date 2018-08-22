@@ -27,9 +27,18 @@ class App extends Component {
 
   deleteProd = prod_id => {
     console.log(prod_id);
-    axios.delete(`/api/delete/${prod_id}`).then(res => {
-      console.log("It's been deleted boss");
-    });
+    axios
+      .delete(`/api/delete/${prod_id}`)
+      .then(res => {
+        console.log("It's been deleted boss");
+      })
+      .then(
+        axios.get("/api/inventory").then(res => {
+          this.setState({
+            inventory: res.data
+          });
+        })
+      );
   };
 
   render() {
