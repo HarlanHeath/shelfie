@@ -50,7 +50,7 @@ class App extends Component {
           inventory={this.state.inventory}
           delete={this.deleteProd}
         />
-        <Form />
+        <Form get={this.getInv} />
       </div>
     );
   }
