@@ -43,7 +43,7 @@ export default class Form extends Component {
   };
 
   render() {
-    console.log(this.state);
+    // console.log(this.state);
     return (
       <div className="form-field">
         <input
@@ -56,7 +56,7 @@ export default class Form extends Component {
           onChange={e => this.nameInput(e.target.value)}
         />
         <input
-          placeHolder="Price"
+          placeholder="Price"
           onChange={e => this.priceInput(e.target.value)}
         />
         <div className="button-contain">

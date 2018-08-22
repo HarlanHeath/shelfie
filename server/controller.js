@@ -12,9 +12,14 @@ module.exports = {
 
   delete: (req, res, next) => {
     const dbInstance = req.app.get("db");
-    dbInstance
-      .delete_product(parseInt(req.params.prod_id))
-      .then(res.status(200).send(sim1prod))
+
+    dbInstance;
+    console
+      .log(req.params.id)
+      .delete_product(req.params.id)
+      .then(response => {
+        res.status(200).send(response);
+      })
       .catch(err => {
         res.status(500).send({ errorMessage: "Something has gone wrong!" });
       });

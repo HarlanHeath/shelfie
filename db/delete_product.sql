@@ -1,1 +1,1 @@
-DELETE FROM sim1prod WHERE id=$1
+DELETE FROM sim1prod WHERE prod_id=$1

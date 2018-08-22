@@ -14,19 +14,33 @@ class App extends Component {
   }
 
   componentDidMount() {
+    this.getInv();
+  }
+
+  getInv = () => {
     axios.get("/api/inventory").then(res => {
-      console.log("HAHAHAHAHHAHA", res);
       this.setState({
         inventory: res.data
       });
     });
-  }
+  };
+
+  deleteProd = prod_id => {
+    console.log(prod_id);
+    axios.delete(`/api/delete/${prod_id}`).then(res => {
+      console.log("It's been deleted boss");
+    });
+  };
 
   render() {
     return (
       <div className="App">
         <Header />
-        <Dashboard inventory={this.state.inventory} />
+        <Dashboard
+          get={this.getInv}
+          inventory={this.state.inventory}
+          delete={this.deleteProd}
+        />
         <Form />
       </div>
     );
