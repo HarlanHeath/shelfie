@@ -9,10 +9,9 @@ export default class Dashboard extends Component {
   }
 
   render() {
-    console.log(this.props);
+    // console.log(this.props);
     let prodinv = this.props.inventory.map((product, index) => {
-      console.log(product);
-
+      // console.log(product);
       return (
         <div className="prod-contain" key={index}>
           <p>{product.imageurl}</p>

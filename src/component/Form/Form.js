@@ -44,8 +44,10 @@ export default class Form extends Component {
 
   render() {
     // console.log(this.state);
+    let prodinv = this.props.get;
     return (
       <div className="form-field">
+        <div>{prodinv}</div>
         <input
           placeholder="Image URL"
           onChange={e => this.urlInput(e.target.value)}
